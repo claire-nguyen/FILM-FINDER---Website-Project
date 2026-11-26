@@ -1,5 +1,6 @@
+/* ---------- Page basics ---------- */
 body {
-    background-color: #322724;
+    background-color: #53413D;
     color: #F9F2DA;
     font-family: "Geologica", Arial, sans-serif;
     font-size: 16px;
@@ -87,7 +88,7 @@ a:hover {
     box-sizing: border-box;
     padding: 10px 22px;
     background-color: #EBB83F;
-    color: #322724;
+    color: #53413D;
     border: 2px solid #EBB83F;
     border-radius: 999px;
     font-family: "Geologica", Arial, sans-serif;
@@ -98,12 +99,12 @@ a:hover {
 
 .btn:hover {
     background-color: #F9F2DA;
-    color: #322724;
+    color: #53413D;
     border: 2px solid #F9F2DA;
 }
 
 .btn-outline {
-    background-color: #322724;
+    background-color: #53413D;
     color: #F9F2DA;
     border: 2px solid #C74D1E;
 }
@@ -127,7 +128,7 @@ a:hover {
 .field {
     box-sizing: border-box;
     padding: 10px 16px;
-    background-color: #322724;
+    background-color: #53413D;
     color: #F9F2DA;
     border: 2px solid #C74D1E;
     border-radius: 999px;
@@ -190,7 +191,7 @@ a:hover {
     display: inline-block;
     padding: 2px 14px;
     background-color: #EBB83F;
-    color: #322724;
+    color: #53413D;
     border-radius: 999px;
     font-size: 14px;
 }
@@ -199,7 +200,7 @@ a:hover {
     display: inline-block;
     padding: 0 12px;
     background-color: #EBB83F;
-    color: #322724;
+    color: #53413D;
     border-radius: 999px;
 }
 
@@ -303,9 +304,14 @@ dd {
     margin: 50px auto 30px auto;
 }
 
+
+/* ==========================================================
+   LIGHT MODE - the opposite of dark mode
+   (JavaScript adds the class "light" to <body>)
+   ========================================================== */
 .light {
     background-color: #F9F2DA;
-    color: #322724;
+    color: #53413D;
 }
 
 .light h1 {
@@ -321,7 +327,7 @@ dd {
 }
 
 .light a:hover {
-    color: #322724;
+    color: #53413D;
 }
 
 .light .filmstrip {
@@ -338,19 +344,19 @@ dd {
 .light .btn:hover {
     background-color: #53413D;
     color: #F9F2DA;
-    border: 2px solid #322724;
+    border: 2px solid #53413D;
 }
 
 .light .btn-outline {
     background-color: #F9F2DA;
-    color: #322724;
+    color: #53413D;
     border: 2px solid #EBB83F;
 }
 
 .light .btn-outline:hover {
     background-color: #53413D;
     color: #F9F2DA;
-    border: 2px solid #322724;
+    border: 2px solid #53413D;
 }
 
 .light .panel {
@@ -359,7 +365,7 @@ dd {
 
 .light .field {
     background-color: #F9F2DA;
-    color: #322724;
+    color: #53413D;
     border: 2px solid #EBB83F;
 }
 
@@ -403,6 +409,10 @@ dd {
     border: 2px solid #EBB83F;
 }
 
+
+/* ==========================================================
+   RESPONSIVE - small screens (media query from Lesson 7)
+   ========================================================== */
 @media (max-width: 600px) {
     h1 {
         font-size: 32px;

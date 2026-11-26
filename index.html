@@ -7,10 +7,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+    <script src="filmfinder.js" defer></script>
 </head>
 
 <body>
@@ -34,19 +34,18 @@
         <section class="panel">
             <h2>Search</h2>
             <form id="search-form" class="search-row">
-                <label for="search-type" class="visually-hidden">Search by</label>
-                <select id="search-type">
+                <select id="search-type" class="field" aria-label="Search by">
                     <option value="name">Film name</option>
                     <option value="manufacturer">Manufacturer</option>
                     <option value="dx">DX code</option>
                 </select>
 
-                <label for="search-input" class="visually-hidden">Search text</label>
-                <input id="search-input" type="text" placeholder="e.g. Kodak Portra 400" required>
+                <input id="search-input" class="field" type="text" placeholder="e.g. Kodak Portra 400" aria-label="Search text" required>
+                <datalist id="brand-list"></datalist>
 
-                <button class="btn" type="submit">Search</button>
+                <button class="btn btn-small" type="submit">Search</button>
             </form>
-            <p class="hint">The DX code is the 6-digit number next to the barcode on the canister, e.g. 013994. Tip: press / to jump to the search box.</p>
+            <p class="hint">The DX code is the 6-digit number next to the barcode on the canister, e.g. 013994. Only a few films in this database list a DX code. Tip: press / to jump to the search box.</p>
         </section>
 
         <section class="panel">
@@ -61,7 +60,7 @@
 
     <footer class="container site-footer">
         <p>
-            Film data: <a href="https://thebigfilmdatabase.merinorus.com/" target="_blank" rel="noopener">The Big Film Database</a>.
+            Film data: <a href="https://www.filmrescue.com/film-database/" target="_blank" rel="noopener">Film Rescue Photographic Film Index</a>.
             Weather: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.
         </p>
     </footer>
