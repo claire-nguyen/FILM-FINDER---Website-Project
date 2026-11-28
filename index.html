@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <script src="filmfinder.js" defer></script>
@@ -19,19 +19,18 @@
             <a class="logo" href="index.html">Film Finder</a>
             <nav class="header-nav">
                 <a href="https://findmyfilmlab.com/" target="_blank" rel="noopener">Find a Lab</a>
-                <button id="theme-button" class="btn btn-outline" type="button">Light mode</button>
+                <button id="theme-button" class="button button-outline button-small" type="button">Light mode</button>
             </nav>
         </div>
     </header>
     <div class="filmstrip" aria-hidden="true"></div>
 
-    <main class="container">
-        <section class="hero">
+    <!-- SPLIT SCREEN: left half = search, right half = Today's film -->
+    <main class="split">
+        <section class="split-left">
             <h1>Find your film.</h1>
             <p class="subtitle">Search by film name, manufacturer, or the DX code printed on the canister.</p>
-        </section>
 
-        <section class="panel">
             <h2>Search</h2>
             <form id="search-form" class="search-row">
                 <select id="search-type" class="field" aria-label="Search by">
@@ -41,26 +40,27 @@
                 </select>
 
                 <input id="search-input" class="field" type="text" placeholder="e.g. Kodak Portra 400" aria-label="Search text" required>
-                <datalist id="brand-list"></datalist>
 
-                <button class="btn btn-small" type="submit">Search</button>
+                <button class="button button-small" type="submit">Search</button>
             </form>
-            <p class="hint">The DX code is the 6-digit number next to the barcode on the canister, e.g. 013994. Only a few films in this database list a DX code. Tip: press / to jump to the search box.</p>
+            <p class="hint">DX code: type the 6-digit number printed next to the barcode (e.g. 013994), the 4-digit extract (e.g. 1399), or a DX number like 87-7. Tip: press / to jump to the search box.</p>
+
+            <p id="message" role="status"></p>
         </section>
 
-        <section class="panel">
-            <h2>Today's pick</h2>
-            <p id="weather-text">Press the button and we will check today's weather, then pick a film to match.</p>
-            <button id="random-btn" class="btn" type="button">Random film for today's weather</button>
+        <section class="split-right">
+            <h2>Today's film</h2>
+            <div id="weather-box">
+                <p id="weather-text">Checking today's weather...</p>
+                <p id="weather-tip"></p>
+            </div>
+            <button id="random-button" class="button" type="button">Random film (available only)</button>
         </section>
-
-        <p id="message" role="status"></p>
-        <section id="results" class="card-grid"></section>
     </main>
 
     <footer class="container site-footer">
         <p>
-            Film data: <a href="https://www.filmrescue.com/film-database/" target="_blank" rel="noopener">Film Rescue Photographic Film Index</a>.
+            Film data: <a href="https://thebigfilmdatabase.merinorus.com/" target="_blank" rel="noopener">The Big Film Database</a> (CC BY-SA 4.0).
             Weather: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.
         </p>
     </footer>

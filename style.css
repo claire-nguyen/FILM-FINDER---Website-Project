@@ -1,9 +1,15 @@
-/* ---------- Page basics ---------- */
+/* ==========================================================
+   PALETTE: Noir Chic
+   #171717 darkest | #343434 dark | #515151 medium | #8C8C8C light grey | #B6B6B6 lightest
+   Dark mode:  page #171717, panels #343434, borders #515151, text #B6B6B6, small text #8C8C8C
+   Light mode: page #B6B6B6, panels #8C8C8C, text #171717
+   ========================================================== */
+
 body {
-    background-color: #53413D;
-    color: #F9F2DA;
-    font-family: "Geologica", Arial, sans-serif;
-    font-size: 16px;
+    background-color: #171717;
+    color: #B6B6B6;
+    font-family: "Fira Mono", "Courier New", monospace;
+    font-size: 15px;
     margin: 0;
 }
 
@@ -18,41 +24,39 @@ body {
 }
 
 
-/* ---------- Headings and links ---------- */
+/* Headings */
 h1 {
-    color: #EBB83F;
-    font-size: 45px;
-    margin: 40px 0 8px 0;
+    font-size: 34px;
+    margin: 0 0 12px 0;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 20px;
     margin: 0 0 14px 0;
-    padding-left: 12px;
-    border-left: 6px solid #C74D1E;
 }
 
 h3 {
     font-size: 17px;
-    margin: 0 0 4px 0;
+    margin: 0 0 8px 0;
 }
 
 .subtitle {
-    font-size: 18px;
+    font-size: 16px;
     margin: 0 0 28px 0;
 }
 
 a {
-    color: #EBB83F;
+    color: #B6B6B6;
 }
 
 a:hover {
-    color: #F9F2DA;
+    background-color: #B6B6B6;
+    color: #171717;
     text-decoration: none;
 }
 
 
-/* ---------- Header and film strip ---------- */
+/* Header and film strip */
 .site-header {
     padding: 14px 0;
 }
@@ -71,158 +75,242 @@ a:hover {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     text-decoration: none;
 }
 
 .filmstrip {
-    height: 12px;
-    background-color: #C74D1E;
-    border-bottom: 6px solid #EBB83F;
+    height: 14px;
+    background-color: #515151;
+    border-bottom: 6px solid #343434;
 }
 
 
-/* ---------- Buttons: rounded corners + colour change on hover ---------- */
-.btn {
+/* Buttons */
+.button {
     display: inline-block;
     box-sizing: border-box;
     padding: 10px 22px;
-    background-color: #EBB83F;
-    color: #53413D;
-    border: 2px solid #EBB83F;
+    background-color: #B6B6B6;
+    color: #171717;
+    border: 2px solid #B6B6B6;
     border-radius: 999px;
-    font-family: "Geologica", Arial, sans-serif;
-    font-size: 16px;
+    font-family: "Fira Mono", "Courier New", monospace;
+    font-size: 15px;
     text-decoration: none;
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #F9F2DA;
-    color: #53413D;
-    border: 2px solid #F9F2DA;
+.button:hover {
+    background-color: #171717;
+    color: #B6B6B6;
+    border: 2px solid #B6B6B6;
 }
 
-.btn-outline {
-    background-color: #53413D;
-    color: #F9F2DA;
-    border: 2px solid #C74D1E;
+.button-outline {
+    background-color: #171717;
+    color: #B6B6B6;
+    border: 2px solid #B6B6B6;
+}
+
+.button-outline:hover {
+    background-color: #B6B6B6;
+    color: #171717;
+    border: 2px solid #B6B6B6;
+}
+
+.button-small {
+    padding: 6px 18px;
+    font-size: 14px;
 }
 
 
-/* ---------- Panels and form fields ---------- */
+/* Split screen (index.html) */
+.split {
+    display: flex;
+    min-height: 480px;
+}
+
+.split-left {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 40px;
+    background-color: #171717;
+}
+
+.split-right {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 40px;
+    background-color: #343434;
+}
+
+
+/* Panels and form fields */
 .panel {
     box-sizing: border-box;
     padding: 20px;
     margin: 0 0 24px 0;
-    border: 2px solid #C74D1E;
+    background-color: #343434;
+    border: 2px solid #515151;
     border-radius: 16px;
 }
 
 .search-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
 }
 
 .field {
     box-sizing: border-box;
-    padding: 10px 16px;
-    background-color: #53413D;
-    color: #F9F2DA;
-    border: 2px solid #C74D1E;
+    width: 100%;
+    padding: 6px 16px;
+    background-color: #171717;
+    color: #B6B6B6;
+    border: 2px solid #8C8C8C;
     border-radius: 999px;
-    font-family: "Geologica", Arial, sans-serif;
-    font-size: 16px;
-}
-
-#search-input {
-    width: 320px;
+    font-family: "Fira Mono", "Courier New", monospace;
+    font-size: 14px;
 }
 
 .hint {
-    font-size: 14px;
+    font-size: 13px;
+    color: #8C8C8C;
     margin: 12px 0 0 0;
 }
 
-#message {
-    min-height: 26px;
+#weather-text {
+    margin: 0 0 6px 0;
+}
+
+#weather-tip {
     margin: 0 0 16px 0;
 }
 
+#message {
+    min-height: 24px;
+    margin: 16px 0 0 0;
+}
+
 .error {
-    color: #EBB83F;
-}
-
-
-/* ---------- Search result cards ---------- */
-.card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.film-card {
     box-sizing: border-box;
-    width: 300px;
-    padding: 16px;
-    border: 2px solid #C74D1E;
-    border-radius: 16px;
-    cursor: pointer;
+    padding: 8px 16px;
+    border: 2px solid #B6B6B6;
+    border-radius: 12px;
 }
 
-.film-card:hover {
-    border: 2px solid #EBB83F;
-}
-
-.highlight {
-    border: 2px solid #EBB83F;
-}
-
-.card-maker {
-    color: #EBB83F;
-    font-size: 14px;
-    margin: 0;
-}
-
-
-/* ---------- Small labels ---------- */
 .tag {
     display: inline-block;
     padding: 2px 14px;
-    background-color: #EBB83F;
-    color: #53413D;
+    background-color: #B6B6B6;
+    color: #171717;
     border-radius: 999px;
-    font-size: 14px;
 }
 
-.badge {
+
+/* Label */
+.status {
     display: inline-block;
     padding: 0 12px;
-    background-color: #EBB83F;
-    color: #53413D;
+    border: 2px solid #B6B6B6;
     border-radius: 999px;
 }
 
+.status-on {
+    background-color: #B6B6B6;
+    color: #171717;
+}
 
-/* ---------- Result page ---------- */
-.detail-row {
+
+/* Results list: each card has the featured image on top */
+.result-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
-    margin: 24px 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px 24px;
+    margin: 0 0 20px 0;
+}
+
+.bar-title {
+    margin: 0;
+}
+
+.bar-count {
+    margin: 0;
+}
+
+#film-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.result-card {
+    box-sizing: border-box;
+    width: 460px;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #343434;
+    border: 2px solid #515151;
+    border-radius: 16px;
+}
+
+.result-image {
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 0 0 16px 0;
+    background-color: #171717;
+    border-radius: 12px;
+}
+
+.line {
+    margin: 0 0 4px 0;
+}
+
+.pack-img {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+
+/* Detail View: featured image */
+.feature {
+    box-sizing: border-box;
+    padding: 30px 20px;
+    margin: 0 0 24px 0;
+    text-align: center;
+    background-color: #343434;
+    border: 2px solid #515151;
+    border-radius: 16px;
+}
+
+.feature h1 {
+    margin: 20px 0 8px 0;
+}
+
+#film-subtitle {
+    margin: 0;
 }
 
 .image-box {
-    width: 280px;
+    width: 360px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .package-img {
     display: block;
     width: 100%;
     height: auto;
-    border: 2px solid #C74D1E;
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
 .no-image {
@@ -230,17 +318,12 @@ a:hover {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    min-height: 320px;
+    min-height: 280px;
     padding: 16px;
     text-align: center;
-    border: 2px solid #C74D1E;
-    border-radius: 16px;
-}
-
-.info-panel {
-    width: 600px;
-    max-width: 100%;
-    margin: 0;
+    background-color: #171717;
+    border: 2px solid #515151;
+    border-radius: 12px;
 }
 
 dl {
@@ -252,16 +335,15 @@ dl {
     flex-wrap: wrap;
     gap: 4px 16px;
     padding: 10px 0;
-    border-bottom: 1px solid #C74D1E;
+    border-bottom: 1px solid #515151;
 }
 
 dt {
-    width: 150px;
-    color: #EBB83F;
+    width: 170px;
 }
 
 dd {
-    width: 340px;
+    width: 330px;
     max-width: 100%;
     margin: 0;
 }
@@ -271,6 +353,19 @@ dd {
     flex-wrap: wrap;
     gap: 10px;
     margin: 10px 0 0 0;
+}
+
+.row-two {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 0 0 24px 0;
+}
+
+.row-two .panel {
+    width: 456px;
+    max-width: 100%;
+    margin: 0;
 }
 
 .gallery {
@@ -288,134 +383,136 @@ dd {
     height: 170px;
     width: auto;
     max-width: 100%;
-    border: 2px solid #C74D1E;
+    border: 2px solid #515151;
     border-radius: 12px;
 }
 
 .gallery figcaption {
-    font-size: 13px;
+    font-size: 12px;
     margin: 4px 0 0 0;
 }
 
 
-/* ---------- Footer ---------- */
+/* Footer */
 .site-footer {
-    font-size: 14px;
+    font-size: 13px;
+    color: #8C8C8C;
     margin: 50px auto 30px auto;
 }
 
 
-/* ==========================================================
-   LIGHT MODE - the opposite of dark mode
-   (JavaScript adds the class "light" to <body>)
-   ========================================================== */
+/* LIGHT MODE */
 .light {
-    background-color: #F9F2DA;
-    color: #53413D;
-}
-
-.light h1 {
-    color: #C74D1E;
-}
-
-.light h2 {
-    border-left: 6px solid #EBB83F;
+    background-color: #B6B6B6;
+    color: #171717;
 }
 
 .light a {
-    color: #C74D1E;
+    color: #171717;
 }
 
 .light a:hover {
-    color: #53413D;
+    background-color: #171717;
+    color: #B6B6B6;
 }
 
 .light .filmstrip {
-    background-color: #C74D1E;
-    border-bottom: 6px solid #EBB83F;
+    background-color: #515151;
+    border-bottom: 6px solid #8C8C8C;
 }
 
-.light .btn {
-    background-color: #C74D1E;
-    color: #F9F2DA;
-    border: 2px solid #C74D1E;
+.light .button {
+    background-color: #171717;
+    color: #B6B6B6;
+    border: 2px solid #171717;
 }
 
-.light .btn:hover {
-    background-color: #53413D;
-    color: #F9F2DA;
-    border: 2px solid #53413D;
+.light .button:hover {
+    background-color: #B6B6B6;
+    color: #171717;
+    border: 2px solid #171717;
 }
 
-.light .btn-outline {
-    background-color: #F9F2DA;
-    color: #53413D;
-    border: 2px solid #EBB83F;
+.light .button-outline {
+    background-color: #B6B6B6;
+    color: #171717;
+    border: 2px solid #171717;
 }
 
-.light .btn-outline:hover {
-    background-color: #53413D;
-    color: #F9F2DA;
-    border: 2px solid #53413D;
+.light .button-outline:hover {
+    background-color: #171717;
+    color: #B6B6B6;
+    border: 2px solid #171717;
+}
+
+.light .split-left {
+    background-color: #B6B6B6;
+}
+
+.light .split-right {
+    background-color: #8C8C8C;
 }
 
 .light .panel {
-    border: 2px solid #EBB83F;
+    background-color: #8C8C8C;
 }
 
 .light .field {
-    background-color: #F9F2DA;
-    color: #53413D;
-    border: 2px solid #EBB83F;
+    background-color: #B6B6B6;
+    color: #171717;
+    border: 2px solid #171717;
+}
+
+.light .hint {
+    color: #343434;
 }
 
 .light .error {
-    color: #C74D1E;
+    border: 2px solid #171717;
 }
 
-.light .film-card {
-    border: 2px solid #EBB83F;
+.light .tag {
+    background-color: #171717;
+    color: #B6B6B6;
 }
 
-.light .film-card:hover {
-    border: 2px solid #C74D1E;
+.light .status {
+    border: 2px solid #171717;
 }
 
-.light .highlight {
-    border: 2px solid #C74D1E;
+.light .status-on {
+    background-color: #171717;
+    color: #B6B6B6;
 }
 
-.light .card-maker {
-    color: #C74D1E;
+.light .result-card {
+    background-color: #8C8C8C;
 }
 
-.light .package-img {
-    border: 2px solid #EBB83F;
+.light .result-image {
+    background-color: #B6B6B6;
+}
+
+.light .feature {
+    background-color: #8C8C8C;
 }
 
 .light .no-image {
-    border: 2px solid #EBB83F;
+    background-color: #B6B6B6;
+    border: 2px solid #171717;
 }
 
 .light .info-row {
-    border-bottom: 1px solid #EBB83F;
+    border-bottom: 1px solid #343434;
 }
 
-.light dt {
-    color: #C74D1E;
+.light .site-footer {
+    color: #343434;
 }
 
-.light .gallery img {
-    border: 2px solid #EBB83F;
-}
-
-
-/* ==========================================================
-   RESPONSIVE - small screens (media query from Lesson 7)
-   ========================================================== */
 @media (max-width: 600px) {
     h1 {
-        font-size: 32px;
+        font-size: 26px;
     }
 
     .header-row {
@@ -423,29 +520,18 @@ dd {
         align-items: flex-start;
     }
 
-    .search-row {
+    .split {
         flex-direction: column;
     }
 
-    .field {
+    .split-left {
         width: 100%;
+        padding: 24px;
     }
 
-    #search-input {
+    .split-right {
         width: 100%;
-    }
-
-    .film-card {
-        width: 100%;
-    }
-
-    .detail-row {
-        flex-direction: column;
-    }
-
-    .image-box {
-        width: 100%;
-        max-width: 260px;
+        padding: 24px;
     }
 
     dt {

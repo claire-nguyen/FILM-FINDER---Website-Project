@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Details - Film Finder</title>
+    <title>Results - Film Finder</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <script src="filmfinder.js" defer></script>
@@ -18,52 +18,70 @@
         <div class="container header-row">
             <a class="logo" href="index.html">Film Finder</a>
             <nav class="header-nav">
-                <a href="index.html">Back to search</a>
-                <button id="theme-button" class="btn btn-outline" type="button">Light mode</button>
+                <a href="index.html">New search</a>
+                <button id="theme-button" class="button button-outline button-small" type="button">Light mode</button>
             </nav>
         </div>
     </header>
     <div class="filmstrip" aria-hidden="true"></div>
 
     <main class="container">
-        <p id="message" role="status">Loading film...</p>
+        <p id="message" role="status">Loading...</p>
 
-        <article id="detail" class="hidden">
-            <h1 id="film-title"></h1>
-
-            <div class="detail-row">
-                <div id="image-box" class="image-box"></div>
-
-                <section class="panel info-panel">
-                    <h2>Film Info</h2>
-                    <dl id="info-list"></dl>
-                </section>
+        <!-- VIEW 1: list of search results (each card: featured image on top, text below) -->
+        <section id="list-view" class="hidden">
+            <div class="panel result-bar">
+                <p id="result-title" class="bar-title"></p>
+                <p id="result-count" class="bar-count"></p>
             </div>
+            <div id="film-list"></div>
+        </section>
+
+        <!-- VIEW 2: details of one film -->
+        <article id="detail" class="hidden">
+            <p><a id="back-link" class="button button-outline button-small" href="index.html">&larr; Back</a></p>
+            <p id="pick-note" class="panel hidden"></p>
+
+            <!-- FEATURED IMAGE: big package picture with the film name under it -->
+            <section class="feature">
+                <div id="image-box" class="image-box"></div>
+                <h1 id="film-title"></h1>
+                <p id="film-subtitle"></p>
+            </section>
 
             <section class="panel">
-                <h2>Where to Buy</h2>
-                <p id="price-note"></p>
-                <div id="shop-links" class="link-row"></div>
+                <h2>Film Info</h2>
+                <dl id="info-list"></dl>
             </section>
 
             <section class="panel">
                 <h2>Sample Photos</h2>
                 <p id="gallery-note">Searching for sample photos...</p>
                 <div id="gallery" class="gallery"></div>
-                <div id="photo-links" class="link-row"></div>
             </section>
 
-            <section class="panel">
-                <h2>Where to Develop</h2>
-                <p id="lab-note"></p>
-                <div id="lab-links" class="link-row"></div>
-            </section>
+            <!-- Where to Buy and Where to Develop sit side by side in one row -->
+            <div class="row-two">
+                <section class="panel">
+                    <h2>Where to Buy</h2>
+                    <p id="price-note"></p>
+                    <div id="shop-links" class="link-row"></div>
+                </section>
+
+                <section class="panel">
+                    <h2>Where to Develop</h2>
+                    <p id="lab-note"></p>
+                    <div id="lab-links" class="link-row"></div>
+                </section>
+            </div>
         </article>
     </main>
 
     <footer class="container site-footer">
         <p>
-            Film data: <a href="https://www.filmrescue.com/film-database/" target="_blank" rel="noopener">Film Rescue Photographic Film Index</a>.
+            Film data: <a href="https://thebigfilmdatabase.merinorus.com/" target="_blank" rel="noopener">The Big Film Database</a> (CC BY-SA 4.0).
+            Film box images belong to their respective owners.
+            Local lab: <a href="https://findmyfilmlab.com/location/downtown-camera/" target="_blank" rel="noopener">Downtown Camera</a>.
         </p>
     </footer>
 </body>
